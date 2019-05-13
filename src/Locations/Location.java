@@ -1,5 +1,7 @@
 package Locations;
 
+import Creatures.Hero;
+
 public interface Location {
 
 
@@ -7,4 +9,5 @@ public interface Location {
 
     public Location options();
 
+    public void setHero(Hero hero);
 }

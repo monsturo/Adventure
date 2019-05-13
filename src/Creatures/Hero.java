@@ -3,6 +3,16 @@ package Creatures;
 import java.util.Scanner;
 
 public class Hero extends Creature {
+    private Classes classes;
+
+    public Classes getClasses() {
+        return classes;
+    }
+
+    public void setClasses(Classes classes) {
+        this.classes = classes;
+    }
+
     public enum Classes {
         BANDIT(4, 3, 2, 7), SOLDIER(4, 5, 2, 5),
         WARRIOR(6, 4, 2, 4), PALADIN(4, 4, 4, 4),
@@ -21,8 +31,9 @@ public class Hero extends Creature {
 
     public Hero(Classes classes) {
         super(classes.str, classes.con, classes.inti, classes.spd);
+        this.classes = classes;
         setExp(0);
-        setLvl(0);
+        setLvl(1);
     }
 
 

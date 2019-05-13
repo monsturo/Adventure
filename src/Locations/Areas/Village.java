@@ -1,8 +1,12 @@
-package Locations;
+package Locations.Areas;
+
+import Creatures.Hero;
+import Locations.Location;
 
 import java.util.Scanner;
 
 public class Village implements Location {
+    private Hero hero;
     public Village(){}
 
     @Override
@@ -21,8 +25,18 @@ public class Village implements Location {
         } else if (i == 2) {
             return null;
         } else {
-            return new Forest();
+            Forest forest = new Forest();
+            forest.setHero(hero);
+            return forest;
         }
 
+    }
+
+    public Hero getHero() {
+        return hero;
+    }
+
+    public void setHero(Hero hero) {
+        this.hero = hero;
     }
 }

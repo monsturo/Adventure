@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Combat {
-    Random random = new Random();
-    int round = 0;
+    private Random random = new Random();
+    private int round = 0;
     public void soloFight(Creature c1, Creature c2){
         c1.setTempHp(c1.getHp());
         c2.setTempHp(c2.getHp());

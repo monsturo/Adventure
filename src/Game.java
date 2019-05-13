@@ -1,10 +1,9 @@
-import Creatures.Animals.Wolf;
 import Creatures.Hero;
 import Equipment.Armor.Armor;
 import Equipment.Main_Hand.ShortSword;
-import Locations.Fight;
+import Locations.Practical.Fight;
 import Locations.Location;
-import Locations.Village;
+import Locations.Areas.Village;
 import Mechanics.Combat;
 
 import java.util.Scanner;
@@ -13,12 +12,13 @@ public class Game {
     private static Hero mc;
     private static Combat combat = new Combat();
     private static Location location = new Village();
-    private static Location newLocation;
+
     public static void main(String[] args) {
         createCharacter();
         System.out.print(location.entryMessage());
+        location.setHero(mc);
         while (true){
-            newLocation = location.options();
+            Location newLocation = location.options();
             if (newLocation instanceof Fight){
                 combat.soloFight(mc, ((Fight) newLocation).getCreature());
             } else {
@@ -55,5 +55,9 @@ public class Game {
 
         System.out.println("What is your name?\n");
         mc.setName(scanner.next());
+    }
+
+    public Hero getHero() {
+        return mc;
     }
 }
